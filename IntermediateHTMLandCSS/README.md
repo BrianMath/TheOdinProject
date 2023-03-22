@@ -1,14 +1,6 @@
 # [Intermediate HTML and CSS](https://www.theodinproject.com/paths/full-stack-javascript/courses/intermediate-html-and-css)
 
-<style>
-	#img {
-		text-align: center;
-	}
-</style>
-
-<div id="img">
-	<img src="https://www.theodinproject.com/assets/badge-html-css-2337ff8e484e1eeda0693d331efe7d91100a5f4899b3273b454743ee5c40e271.svg" width="200px" height="auto">
-</div>
+![HTML + CSS](https://www.theodinproject.com/assets/badge-html-css-2337ff8e484e1eeda0693d331efe7d91100a5f4899b3273b454743ee5c40e271.svg)
 
 <br>
 
