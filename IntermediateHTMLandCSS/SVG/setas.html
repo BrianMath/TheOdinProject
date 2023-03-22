@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Setas em SVG</title>
+
+	<style>
+		:root {
+			--light-color: #43C4ED;
+			--dark-color: #635BFF;
+		}
+
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		svg {
+			cursor: pointer;
+			width: 600px;
+			height: auto;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		svg path {
+			transition: all 0.5s ease;
+		}
+
+		#LightGroup path {
+			fill: var(--light-color);
+		}
+
+		#DarkGroup path {
+			fill: var(--dark-color);
+		}
+
+		#Dark2 {
+			transform: translateX(-100%);
+		}
+
+		svg:hover #Light1 {
+			transform: translateX(20%);
+		}
+
+		svg:hover #Dark1 {
+			transform: translateX(40%);
+			opacity: 0;
+		}
+
+		svg:hover #Dark2 {
+			transform: translateX(10%);
+		}
+	</style>
+</head>
+
+<body>
+	<svg width="240" height="200" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+		<g id="Triangles">
+			<g id="LightGroup">
+				<path id="Light1" opacity="0.7" d="M47 48.268C48.3333 49.0378 48.3333 50.9623 47 51.7321L15.5 69.9186C14.1667 70.6884 12.5 69.7261 12.5 68.1865L12.5 31.8135C12.5 30.2739 14.1667 29.3116 15.5 30.0814L47 48.268Z"/>
+			</g>
+			
+			<g id="DarkGroup">
+				<path id="Dark1" opacity="0.7" d="M61.0001 48.268C62.3334 49.0378 62.3334 50.9623 61.0001 51.7321L29.5001 69.9186C28.1667 70.6884 26.5001 69.7261 26.5001 68.1865L26.5001 31.8135C26.5001 30.2739 28.1667 29.3116 29.5001 30.0814L61.0001 48.268Z"/>
+				<path id="Dark2" opacity="0.7" d="M47 48.268C48.3333 49.0378 48.3333 50.9623 47 51.7321L15.5 69.9186C14.1667 70.6884 12.5 69.7261 12.5 68.1865L12.5 31.8135C12.5 30.2739 14.1667 29.3116 15.5 30.0814L47 48.268Z"/>
+			</g>
+		</g>
+	</svg>
+	
+
+	<script style="color: #0d5717;">
+		const svg = document.querySelector("#Triangles")
+		const colors = ["#635BFF", "#43C4ED", "#e244ee", "#811a88", "#6cb976", "#0d5717"]
+		const randomColor = () => colors[Math.floor(Math.random() * colors.length)]
+
+		svg.onclick((event) => {
+			document.documentElement.style.cssText = `
+			--light-color: ${randomColor()};
+			--dark-color: ${randomColor()};
+			`
+		})
+	</script>
+</body>
+</html>
