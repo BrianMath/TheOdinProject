@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Página 1</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: Roboto, sans-serif;
+			box-sizing: border-box;
+			color: #f3f3f3;
+		}
+
+		body {
+			height: 100vh;
+
+			display: grid;
+			grid-template-areas:
+				"header header"
+				"aside main"
+				"footer footer";
+			grid-template-rows: auto 1fr auto;
+			grid-template-columns: 1fr 1fr;
+
+			/* Fazer um fundo como linear gradient */
+			background: linear-gradient(135deg, #1fbdbd, #008b8b);
+			background: -o-linear-gradient(135deg, #1fbdbd, #008b8b);
+			background: -moz-linear-gradient(135deg, #1fbdbd, #008b8b);
+			background: -webkit-linear-gradient(135deg, #1fbdbd, #008b8b);
+		}
+
+		header {
+			grid-area: header;
+			text-align: center;
+		}
+
+		h1 {
+			margin-bottom: 20px;
+			border: 2px solid #000;
+			border-top: 0;
+			display: inline;
+			padding: 0 5px;
+		}
+		
+		aside {
+			grid-area: aside;
+			border-right: 2px solid #000;
+			font-size: 1.7rem;
+			text-align: center;
+		}
+
+		main {
+			grid-area: main;
+		}
+
+		button {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			font-size: 3rem;
+			cursor: pointer;
+			border: none;
+			color: #000;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		button:hover {
+			background-color: #fff;
+			border: 1px solid #000;
+		}
+
+		@media screen and (min-width: 430px) {
+			button {
+				width: 200px;
+				height: 200px;
+				font-size: 4rem;
+			}
+		}
+
+		@media screen and (min-width: 850px) {
+			button {
+				width: 400px;
+				height: 400px;
+				font-size: 6rem;
+			}
+		}
+
+		aside, main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 10px;
+			overflow-y: auto;
+		}
+
+		footer {
+			grid-area: footer;
+			background-color: #008b8b;
+			color: #fff;
+			padding: 10px 10px 30px;
+			border-radius: 10px 10px 0 0;
+			border-top: 2px solid #000;
+			text-align: justify;
+			font-weight: bold;
+			font-size: 1.2rem;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Index</h1>
+	</header>
+
+	<aside>
+		<p>Meu único propósito é servir de teste com o display: grid. Minha existência se resume somente a isso. Vale a pena existir assim?</p>
+	</aside>
+
+	<main>
+		<button>
+			Vai
+		</button>
+	</main>
+
+	<footer>
+		<p>Criado por mim com ajuda do GitHub Copilot 🤖</p>
+	</footer>
+
+	<script>
+		let b = document.querySelector("button")
+
+		b.onclick = () => {
+			window.location.href = "pagina2.html"
+		}
+	</script>
+</body>
+</html>
